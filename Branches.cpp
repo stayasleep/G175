@@ -76,21 +76,21 @@ int main()
 		cout << "    *" << endl;
 		cout << "   * * " << endl;
 		cout << "  *   *  " << endl;
-		cout << " *  " << value << "  * " << endl;
-		cout << "*********" << endl;
+		cout << " *" << setw(3) << value << "  * " << endl;
+		cout << stars.assign(9, '*') << endl;
 	}
 	else if (sides == 10) {
 		cout << "      *     " << endl;
 		cout << "    *   *   " << endl;
-		cout << "   *  " << value << "  *" << endl;
+		cout << "   *" << setw(3) << value << "  *" << endl;
 		cout << "  *       *" << endl;
 		cout << "   *     *" << endl;
-		cout << "     *  *" << endl;
+		cout << "    *   *" << endl;
 		cout << "      *" << endl;
 	}
 	else if (sides == 12) {
 		//formatting helps when value takes 1 or 2 spaces when outputting
-		cout << "     *" << endl;
+		cout << "      *" << endl;
 		cout << "  *      *" << endl; 
 		cout << "*          *" << endl;
 		cout << " *" << setw(5) << value << "   *" << endl;
@@ -106,4 +106,3 @@ int main()
 	}
     return 0;
 }
-
