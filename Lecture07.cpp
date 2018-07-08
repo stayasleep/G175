@@ -15,13 +15,13 @@ std::string PerformScience(std::string tCreatureOne, std::string tCreatureTwo);
 
 int main()
 {
-	std::cout << "Enter first number between 1 and 9";
+	std::cout << "Enter first number between 1 and 9: ";
 	int tFirst = GetGoodInt(1, 9);
-	std::cout << "Enter second number between 2 and 13";
+	std::cout << "Enter second number between 2 and 13: ";
 	int tSecond = GetGoodInt(2, 13);// Even though I am using this function twice with different arguments, there is still only on function.
 
 	int tAnswer = BlertTwoNumbers(tFirst, tSecond);
-	std::cout << tAnswer;
+	std::cout << tAnswer << std::endl;
 
 	/////
 	std::string tPony = "Pony";
@@ -29,7 +29,7 @@ int main()
 	std::string tMonster = tMonkey + tPony;
 	for (int i = 0; i < 5; i++)
 		tMonster = PerformScience(tMonster, tMonkey);// Keep adding more monkeys to the middle of the monster.
-	std::cout << tMonster;
+	std::cout << tMonster << std::endl;
 	return 0;
 
 }
@@ -43,10 +43,26 @@ float BlertTwoNumbers(float tOne, float tOther)
 int GetGoodInt(int tLow, int tHigh)
 {
 	// This doesn’t return until it has a good number.  It checks for incorrect range, and invalid non-number
-	// while() {
-	// if( cin>>input > Low && input << High){
+	bool isValid = false;
+	int userInput;
 
-	return 0;
+	while (!isValid) {
+		if (!(std::cin >> userInput)) {
+			std::cin.clear();
+			std::cin.ignore(10000, '\n');
+			std::cout << "Not a Number" << std::endl;
+		}
+		else if (userInput < tLow) {
+			std::cout << "Too Low" << std::endl;
+		}
+		else if (userInput > tHigh) {
+			std::cout << "Too High" << std::endl;
+		}
+		else {
+			isValid = true;
+		}
+	}
+	return userInput;
 }
 
 std::string PerformScience(std::string tCreatureOne, std::string tCreatureTwo)
@@ -58,10 +74,12 @@ std::string PerformScience(std::string tCreatureOne, std::string tCreatureTwo)
 	//get first = substr(0,length/2) 
 	//get lasthalf = substr(length/2, length-1)
 	//new = first + creature2 + lasthalf
-	int strLength = tCreatureOne.length();
+	double strLength = tCreatureOne.length();
+	std::cout << "the length is " << strLength << std::endl;
+
 	std::string firstHalf = tCreatureOne.substr(0, strLength / 2);
 	std::string secHalf = tCreatureOne.substr(strLength / 2, strLength - 1);
 
-	std::string newWord = firstHalf + tCreatureOne + secHalf;
+	std::string newWord = firstHalf + tCreatureTwo + secHalf;
 	return newWord;
 }
