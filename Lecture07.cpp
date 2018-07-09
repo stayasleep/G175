@@ -23,7 +23,6 @@ int main()
 	int tAnswer = BlertTwoNumbers(tFirst, tSecond);
 	std::cout << tAnswer << std::endl;
 
-	/////
 	std::string tPony = "Pony";
 	std::string tMonkey = "Monkey";
 	std::string tMonster = tMonkey + tPony;
@@ -69,11 +68,6 @@ std::string PerformScience(std::string tCreatureOne, std::string tCreatureTwo)
 {
 	// Insert creature two in to the middle of creature one.  Science!
 	// Hamster and Emu make a HamEmuster
-
-	//get length of creature1
-	//get first = substr(0,length/2) 
-	//get lasthalf = substr(length/2, length-1)
-	//new = first + creature2 + lasthalf
 	double strLength = tCreatureOne.length();
 	std::cout << "the length is " << strLength << std::endl;
 
