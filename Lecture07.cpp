@@ -69,7 +69,6 @@ std::string PerformScience(std::string tCreatureOne, std::string tCreatureTwo)
 	// Insert creature two in to the middle of creature one.  Science!
 	// Hamster and Emu make a HamEmuster
 	double strLength = tCreatureOne.length();
-	std::cout << "the length is " << strLength << std::endl;
 
 	std::string firstHalf = tCreatureOne.substr(0, strLength / 2);
 	std::string secHalf = tCreatureOne.substr(strLength / 2, strLength - 1);
